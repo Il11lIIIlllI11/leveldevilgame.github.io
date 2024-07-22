@@ -1,48 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	
-	<meta charset="utf-8">
-	
-	<title>Level Devil</title>
-	<meta name="robots" content="noindex,nofollow" />
-	<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	
-	
-	<link rel="shortcut icon" type="image/png" href="./favicon.png">
-
-	
-	<script src="/poki-sdk.js"></script>
-	
-	<script src="./Level Devil.js"></script>
-
-	<script>
-		window.addEventListener ("touchmove", function (event) { event.preventDefault (); }, { capture: false, passive: false });
-		if (typeof window.devicePixelRatio != 'undefined' && window.devicePixelRatio > 2) {
-			var meta = document.getElementById ("viewport");
-			meta.setAttribute ('content', 'width=device-width, initial-scale=' + (2 / window.devicePixelRatio) + ', user-scalable=no');
-		}
-	</script>
-	
-	<style>
-		html,body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
-		#openfl-content { background: #000000; width: 100%; height: 100%; }
-		#progress { position: relative; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 50%; }
-
-	</style>
-	
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Title</title>
+<link rel="manifest" href="/manifest.json">
+<style>
+  section {
+    width: 100vw; /* Set section width to full viewport width */
+    height: 100vh; /* Set section height to full viewport height */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+  }
+  iframe {
+    width: 100%; /* Set iframe width to 100% of its container (section) */
+    height: 100%; /* Set iframe height to 100% of its container (section) */
+    border: 0; /* Remove iframe border */
+  }
+</style>
 </head>
 <body>
-	
-	<noscript>This webpage makes extensive use of JavaScript. Please enable JavaScript in your web browser to view this page.</noscript>
-	
-	<div id="openfl-content"></div>
-	
-	<script>
-		lime.embed ("Level Devil", "openfl-content", 854, 480, { parameters: {} });
-	</script>
-	
+
+<section>
+  <iframe allowfullscreen="true" src="new.html" frameborder="0"></iframe>
+</section>
+
+</body>
+</html>
+
+ <!-- CD START (required) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sliding Image</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; 
+  }
+  #image {
+    position: fixed;
+    top: 0;
+    right: -300px; 
+    transition: right 1s ease;
+    z-index: 999; 
+    width: 150px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+  }
+</style>
+</head>
+<body>
+
+<div id="container">
+  <a href="https://sites.google.com/view/pizzaedition" target="_blank">
+    <img id="image" src="https://lh4.googleusercontent.com/lUEWrXMVEr4AdjKISyJahDRJ61bwfvHdpeYm86Djn5U8oCm9dI60NGXSBqad9HUvzTXgqlkosA_hWV-VuXPjzrkGvh3_kNSgYk8ySWzXnDpbBCBiooyBbU8oBy3YBZMDkW8RcRVmDuC0raoeqZBm8kBlqs6c5mdfkJeN2aE68lXS_lcOZ5_F7lIuM6qLVg" alt="Sliding Image">
+  </a>
+</div>
+
+<script>
+  // Get the image element
+  var image = document.getElementById("image");
+
+  // Function to slide the image left
+  function slideLeft() {
+    image.style.right = "0";
+  }
+
+  // Function to slide the image right
+  function slideRight() {
+    image.style.right = "-300px"; 
+  }
+
+  slideLeft();
+
+  setTimeout(slideRight, 5000);
+
+  setInterval(function() {
+    slideLeft();
+    setTimeout(slideRight, 5000);
+  }, 40000); 
+
+</script>
 
 </body>
 </html>
